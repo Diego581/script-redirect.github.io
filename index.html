@@ -6,11 +6,10 @@
     <script>
         // Extraer parámetros de la URL
         const urlParams = new URLSearchParams(window.location.search);
-        const page = urlParams.get('page');
-        const token = urlParams.get('token');
+        const email = urlParams.get('email');
 
         // Construir el deep link
-        const deepLink = `towerapp://app/${page}?token=${token}`;
+        const deepLink = `towerapp://app/reset-password/${email}`;
 
         // Intentar abrir la app
         window.location.href = deepLink;
