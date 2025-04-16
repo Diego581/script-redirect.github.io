@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Redirección a Tower App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        // Extraer parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+        const token = urlParams.get('token');
+
+        // Construir el deep link
+        const deepLink = `towerapp://app/${page}?token=${token}`;
+
+        // Intentar abrir la app
+        window.location.href = deepLink;
+
+        // Si después de 2 segundos seguimos en la página web, ofrecer alternativas
+        setTimeout(function () {
+            document.getElementById('redirect-message').style.display = 'block';
+        }, 2000);
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center; padding: 20px;">
+        <h1>Redirigiendo a Tower App...</h1>
+        <p>Si no se abre automáticamente, por favor intente:</p>
+        <div id="redirect-message" style="display: none;">
+            <a href="https://play.google.com/store/apps/details?id=com.yourapp.package">Descargar la app para
+                Android</a>
+            <br><br>
+            <a href="https://apps.apple.com/app/id123456789">Descargar la app para iOS</a>
+        </div>
+    </div>
+</body>
+
+</html>
