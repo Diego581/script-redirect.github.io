@@ -10,7 +10,7 @@
         const token = urlParams.get('token');
 
         // Construir el deep link
-        const deepLink = `towerapp://app/reset-password/${email}?${token}`;
+        const deepLink = `towerapp://app/reset-password/${email}?token=${token}`;
 
         // Intentar abrir la app
         window.location.href = deepLink;
