@@ -7,9 +7,10 @@
         // Extraer parámetros de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const email = urlParams.get('email');
+        const token = urlParams.get('token');
 
         // Construir el deep link
-        const deepLink = `towerapp://app/reset-password/${email}`;
+        const deepLink = `towerapp://app/reset-password/${email}?${token}`;
 
         // Intentar abrir la app
         window.location.href = deepLink;
